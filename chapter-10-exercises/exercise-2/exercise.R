@@ -17,7 +17,7 @@ salary_ajustments <- runif(100, -5000, 10000)
 
 # Create a data frame `salaries` by combining the 3 vectors you just made
 # Remember to set `stringsAsFactors=FALSE`!
-salaries <- data.frame(employees, salaries_2017, salary_ajustments)
+salaries <- data.frame(employees, salaries_2017, salary_ajustments, stringsAsFactors = FALSE)
 View(salaries)
 
 # Add a column to the `salaries` data frame that represents each person's
@@ -62,4 +62,6 @@ mean(salaries[salaries$salary_ajustments < 0, "salary_ajustments"])
 ## how you generated the salaries?
 
 # Write a .csv file of your salary data to your working directory
-write.csv(salaries, "salaries.txt")
+write.csv(salaries, "./salaries.txt")
+
+?data.frame
